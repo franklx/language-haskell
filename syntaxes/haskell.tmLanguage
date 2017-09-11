@@ -501,19 +501,19 @@
 		<dict>
 			<key>begin</key>
 			<string>(?x)^(\s*)
-                (?&lt;fn&gt;
-                  (?:
-                    [\p{Ll}_][\p{Ll}_\p{Lu}\p{Lt}\p{Nd}']* |
-                    \(
-                      (?!--+\))
-                      (?:
-                        (?![(),;\[\]`{}_"'])[\p{S}\p{P}]
-                      )+
-                    \)
-                  )
-                  (?:\s*,\s*\g&lt;fn&gt;)?
-                )
-                \s*(::|∷)</string>
+				(?&lt;fn&gt;
+				  (?:
+					[\p{Ll}_][\p{Ll}_\p{Lu}\p{Lt}\p{Nd}']* |
+					\(
+					  (?!--+\))
+					  (?:
+						(?![(),;\[\]`{}_"'])[\p{S}\p{P}]
+					  )+
+					\)
+				  )
+				  (?:\s*,\s*\g&lt;fn&gt;)?
+				)
+				\s*(::|∷)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>2</key>
@@ -599,6 +599,35 @@
 			<string>,</string>
 			<key>name</key>
 			<string>punctuation.separator.comma.haskell</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^(\s*)([\p{Ll}_][\p{Ll}_\p{Lu}\p{Lt}\p{Nd}']*)\s*([^=]*)(=)</string>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function-definition.haskell</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>$self</string>
+						</dict>
+					</array>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.haskell</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.function.function-definition.haskell</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -925,3 +954,4 @@
 	<string>5C034675-1F6D-497E-8073-369D37E2FD7D</string>
 </dict>
 </plist>
+<!-- vim: set ts=8 sts=8 sw=8 noet sta :-->
