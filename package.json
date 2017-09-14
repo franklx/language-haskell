@@ -1,13 +1,13 @@
 {
-	"name": "language-haskell",
-    "displayName": "Haskell Syntax Highlighting",
-	"description": "Syntax support for the Haskell programming language.",
-	"version": "2.3.2+frk1",
-    "publisher": "justusadam",
-	"engines": {
-		"vscode": "^0.10.0"
-	},
-	"icon": "images/logo.png",
+    "name": "vscode-haskell",
+    "displayName": "franklx|Haskell Syntax Highlighting",
+    "description": "Syntax support for the Haskell programming language.",
+    "version": "0.0.0-git",
+    "publisher": "franklx",
+    "engines": {
+        "vscode": "^0.10.0"
+    },
+    "icon": "images/logo.png",
     "galleryBanner": {
         "color": "#293845",
         "theme": "dark"
@@ -16,14 +16,10 @@
         "language", "haskell", "highlight", "syntax"
     ],
     "license": "BSD-3-Clause",
-    "homepage": "https://github.com/JustusAdam/language-haskell",
+    "homepage": "https://github.com/franklx/vscode-haskell",
     "repository": {
         "type": "git",
-        "url": "https://github.com/JustusAdam/language-haskell.git"
-    },
-    "bugs": {
-        "url": "https://github.com/JustusAdam/language-haskell/issues",
-        "email": "dev@justus.science"
+        "url": "https://github.com/franklx/vscode-haskell.git"
     },
     "categories": [
         "Languages"
@@ -73,8 +69,8 @@
         "compile": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install"
     },
-	"devDependencies": {
-		"vscode":"^0.11.0",
+    "devDependencies": {
+        "vscode":"^0.11.0",
         "typescript":"^2.2.2"
-	}
+    }
 }
