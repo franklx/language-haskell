@@ -602,15 +602,15 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^(\s*)([\p{Ll}_][\p{Ll}_\p{Lu}\p{Lt}\p{Nd}']*)\s*([^=]*)(=)</string>
+			<string>^([\p{Ll}_][\p{Ll}_\p{Lu}\p{Lt}\p{Nd}']*)\s*([^=]*)(=)</string>
 			<key>captures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function-definition.haskell</string>
 				</dict>
-				<key>3</key>
+				<key>2</key>
 				<dict>
 					<key>patterns</key>
 					<array>
@@ -620,7 +620,7 @@
 						</dict>
 					</array>
 				</dict>
-				<key>4</key>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.operator.haskell</string>
@@ -628,6 +628,40 @@
 			</dict>
 			<key>name</key>
 			<string>meta.function.function-definition.haskell</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^(\s*)\b(where|let)([\s\n]+)([\p{Ll}_][\p{Ll}_\p{Lu}\p{Lt}\p{Nd}']*)\s*([^=]*)(=)</string>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.haskell</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function-definition.nested.haskell</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>$self</string>
+						</dict>
+					</array>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.haskell</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.function.function-definition.nested.haskell</string>
 		</dict>
 	</array>
 	<key>repository</key>
